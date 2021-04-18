@@ -1,0 +1,41 @@
+{
+  "name": "dom-jsx",
+  "version": "1.0.0",
+  "description": "A simple way to use tsx syntax to create native dom elements using document.createElement.",
+  "keywords": [
+    "TypeScript",
+    "tsx",
+    "jsx",
+    "create-element"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NewBuilding/dom-jsx.git"
+  },
+  "license": "MIT",
+  "author": "Perry Huang",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsc -p ./tsconfig.build.json",
+    "test": "npx mocha --require source-map-support/register --require ts-node/register 'test/**/*.tsx'"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.14",
+    "@types/mocha": "^8.2.0",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0",
+    "chai": "^4.2.0",
+    "coveralls": "^3.1.0",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "rimraf": "^3.0.2",
+    "sort-package-json": "^1.48.0",
+    "source-map-support": "^0.5.19",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  }
+}
