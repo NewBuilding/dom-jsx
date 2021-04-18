@@ -1,10 +1,8 @@
 # jsx-dom
+
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/Lusito/tsx-dom/blob/master/LICENSE)
 
-|Master|[![Build Status](https://travis-ci.org/Lusito/tsx-dom.svg?branch=master)](https://travis-ci.org/Lusito/tsx-dom)|[![Code Coverage](https://coveralls.io/repos/github/Lusito/tsx-dom/badge.svg?branch=master)](https://coveralls.io/github/Lusito/tsx-dom)|
-|---|---|---|
-
-this library is from by [tsx-dom](https://github.com/Lusito/tsx-dom).
+this library is fork from by [tsx-dom](https://github.com/Lusito/tsx-dom).
 
 A simple way to use tsx syntax to create native dom elements using document.createElement.
 This project has taken definitions from [preact](https://github.com/developit/preact) from Jason Miller as a starting point.
@@ -16,9 +14,9 @@ Also using innerHTML and the likes should be forbidden, since it's not allowed i
 
 This project allows you to create a UI using react-like components, without including react.
 
-### Installation via NPM
+### Installation via YARN
 
-```npm install tsx-dom --save```
+`yarn add dom-jsx`
 
 Enable TSX parsing in your tsconfig.json:
 
@@ -30,7 +28,26 @@ Enable TSX parsing in your tsconfig.json:
     ...
 ```
 
+### Work with Vite
+
+We provide a vite plugin [vite-plugin-vue-jsx](https://github.com/NewBuilding/vite-plugin-dom-jsx) which to support this librry.
+
+```js
+// vite.config.js
+import domJsx from 'vite-plugin-vue-jsx';
+
+export default {
+  plugins: [
+    domJsx({
+      // pragma: string, // jsxFactory function
+      // include: RegExp[] // include file
+    }),
+  ],
+};
+```
+
 ### Plain dom elements
+
 ```TypeScript
 // This import is required
 import { h } from "jsx-dom";
@@ -101,14 +118,6 @@ const el = <div>
 ```
 
 As you can see in the example above, even variables can be inserted as children. Arrays will be expanded. Falsey values (except 0) will be ignored. HTMLElement values will be appended as is, string or number values will become text-nodes.
-
-### Report isssues
-
-Something not working quite as expected? Do you need a feature that has not been implemented yet? Check the [issue tracker](https://github.com/Lusito/tsx-dom/issues) and add a new one if your problem is not already listed. Please try to provide a detailed description of your problem, including the steps to reproduce it.
-
-### Contribute
-
-Awesome! If you would like to contribute with a new feature or submit a bugfix, fork this repo and send a pull request. Please, make sure all the unit tests are passing before submitting and add new ones in case you introduced new features.
 
 ### License
 
